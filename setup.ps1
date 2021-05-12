@@ -4,6 +4,8 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 New-Item -ItemType "directory" -Force -Path "c:\down"
 New-Item -ItemType "directory" -Force -Path "c:\rclone"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
+New-Item -ItemType "directory" -Force -Path "C:\TOOLS2\RUN\"
+
 $Url = 'https://goldy.gaia.bysh.me/work/TOOLS2.zip' 
 $ZipFile = 'C:\down\' + $(Split-Path -Path $Url -Leaf) 
 $Destination= 'C:\TOOLS2\' 
@@ -13,7 +15,6 @@ Invoke-WebRequest -Uri $Url -OutFile $ZipFile
 $ExtractShell = New-Object -ComObject Shell.Application 
 $Files = $ExtractShell.Namespace($ZipFile).Items() 
 $ExtractShell.NameSpace($Destination).CopyHere($Files) 
-Start-Process $Destination
 
 
 New-Item -ItemType "directory" -Force -Path "C:\Users\runneradmin\AppData\Roaming\GHISLER"
@@ -22,9 +23,11 @@ Copy-Item "C:\TOOLS2\wcx_ftp.ini" -Destination "C:\Users\runneradmin\AppData\Roa
 Copy-Item -Path "C:\TOOLS2\rclone\*" -Destination "C:\rclone\" -Recurse
 
 
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/sale1.zip" -OutFile -Force "C:\TOOLS2\sale1.zip"
+Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/sale1.zip" -OutFile C:\TOOLS2\sale1.zip
 Expand-Archive -LiteralPath 'C:\TOOLS2\sale1.Zip' -DestinationPath C:\TOOLS2\
 
+Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Alberto_Run.zip" -OutFile C:\TOOLS2\Alberto_Run.zip
+Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
 
 Function Set-ScreenResolution { 
 
