@@ -1,0 +1,28 @@
+name: RUN-RDP
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter CRD code https://remotedesktop.google.com/headless'
+        required: true
+      pincode:
+        description: 'Six digit Pin'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Starting CRD
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: Assign User
+      run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Alok1234" -Force)
+    - name: Download Timeout Script
+      run: Invoke-WebRequest https://raw.githubusercontent.com/kronosj13/crd/main/timeout.ps1 -OutFile timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
