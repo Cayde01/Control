@@ -6,7 +6,7 @@ New-Item -ItemType "directory" -Force -Path "c:\rclone"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
 New-Item -ItemType "directory" -Force -Path "C:\TOOLS2\RUN\"
 
-$Url = 'https://goldy.gaia.bysh.me/work/TOOLS2.zip' 
+$Url = 'https://goldy.gaia.bysh.me/work/Controller.zip' 
 $ZipFile = 'C:\down\' + $(Split-Path -Path $Url -Leaf) 
 $Destination= 'C:\TOOLS2\' 
  
@@ -27,6 +27,9 @@ Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/sale1.zip" -OutFile C:\T
 Expand-Archive -LiteralPath 'C:\TOOLS2\sale1.Zip' -DestinationPath C:\TOOLS2\
 
 Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Alberto_Run.zip" -OutFile C:\TOOLS2\Alberto_Run.zip
+Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
+
+Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Allahu_Run.zip" -OutFile C:\TOOLS2\Allahu_Run.zip.zip
 Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
 
 Function Set-ScreenResolution { 
@@ -189,6 +192,6 @@ Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 [Resolution.PrmaryScreenResolution]::ChangeResolution($width,$height) 
 } 
 
-Set-ScreenResolution -Width 1680 -Height 1050
+Set-ScreenResolution -Width 1920 -Height 1080
 
 Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
