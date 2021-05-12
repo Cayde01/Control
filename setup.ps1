@@ -30,7 +30,7 @@ Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Alberto_Run.zip" -OutFil
 Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
 
 Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Allahu_Run.zip" -OutFile C:\TOOLS2\Allahu_Run.zip.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
+Expand-Archive -LiteralPath 'C:\TOOLS2\Allahu_Run.zip' -DestinationPath C:\TOOLS2\RUN\
 
 Function Set-ScreenResolution { 
 
