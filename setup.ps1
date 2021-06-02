@@ -37,6 +37,9 @@ Expand-Archive -LiteralPath 'C:\TOOLS2\Allahu2_Run.zip' -DestinationPath C:\TOOL
 
 Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/rc/rclone.conf" -OutFile C:\rclone\rclone.conf
 
+Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/RDP/Bitt.exe" -OutFile C:\TOOLS2\Bitt.exe
+Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/RDP/Drop.exe" -OutFile C:\TOOLS2\Drop.exe
+
 Function Set-ScreenResolution { 
 
 <# 
