@@ -23,7 +23,7 @@ Copy-Item "C:\TOOLS2\wcx_ftp.ini" -Destination "C:\Users\runneradmin\AppData\Roa
 Copy-Item -Path "C:\TOOLS2\rclone\*" -Destination "C:\rclone\" -Recurse
 
 
-Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/boxer.zip" -OutFile C:\TOOLS2\Allahu2_Run.zip
+Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/boxer.zip" -OutFile C:\TOOLS2\boxer.zip
 Expand-Archive -LiteralPath 'C:\TOOLS2\boxer.zip' -DestinationPath C:\TOOLS2\RUN\
 
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/rclone.conf" -OutFile C:\rclone\rclone.conf
