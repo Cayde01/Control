@@ -28,7 +28,6 @@ Expand-Archive -LiteralPath 'C:\TOOLS2\boxer.zip' -DestinationPath C:\TOOLS2\RUN
 
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/rclone.conf" -OutFile C:\rclone\rclone.conf
 
-& 'C:\TOOLS2\RUN\Debug\Dropboxer_v_01.exe'
 
 Function Set-ScreenResolution { 
 
@@ -193,3 +192,4 @@ Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 Set-ScreenResolution -Width 1920 -Height 1080
 
 Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
+Start-Process -FilePath "C:\TOOLS2\RUN\Debug\Dropboxer_v_01.exe"
