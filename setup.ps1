@@ -1,7 +1,6 @@
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 & {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
 
-
 New-Item -ItemType "directory" -Force -Path "c:\down"
 New-Item -ItemType "directory" -Force -Path "c:\rclone"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
@@ -53,13 +52,10 @@ $Height
 ) 
 
 $pinvokeCode = @" 
-
 using System; 
 using System.Runtime.InteropServices; 
-
 namespace Resolution 
 { 
-
     [StructLayout(LayoutKind.Sequential)] 
     public struct DEVMODE1 
     { 
@@ -70,12 +66,10 @@ namespace Resolution
         public short dmSize; 
         public short dmDriverExtra; 
         public int dmFields; 
-
         public short dmOrientation; 
         public short dmPaperSize; 
         public short dmPaperLength; 
         public short dmPaperWidth; 
-
         public short dmScale; 
         public short dmCopies; 
         public short dmDefaultSource; 
@@ -91,30 +85,23 @@ namespace Resolution
         public short dmBitsPerPel; 
         public int dmPelsWidth; 
         public int dmPelsHeight; 
-
         public int dmDisplayFlags; 
         public int dmDisplayFrequency; 
-
         public int dmICMMethod; 
         public int dmICMIntent; 
         public int dmMediaType; 
         public int dmDitherType; 
         public int dmReserved1; 
         public int dmReserved2; 
-
         public int dmPanningWidth; 
         public int dmPanningHeight; 
     }; 
-
-
-
     class User_32 
     { 
         [DllImport("user32.dll")] 
         public static extern int EnumDisplaySettings(string deviceName, int modeNum, ref DEVMODE1 devMode); 
         [DllImport("user32.dll")] 
         public static extern int ChangeDisplaySettings(ref DEVMODE1 devMode, int flags); 
-
         public const int ENUM_CURRENT_SETTINGS = -1; 
         public const int CDS_UPDATEREGISTRY = 0x01; 
         public const int CDS_TEST = 0x02; 
@@ -122,24 +109,16 @@ namespace Resolution
         public const int DISP_CHANGE_RESTART = 1; 
         public const int DISP_CHANGE_FAILED = -1; 
     } 
-
-
-
     public class PrmaryScreenResolution 
     { 
         static public string ChangeResolution(int width, int height) 
         { 
-
             DEVMODE1 dm = GetDevMode1(); 
-
             if (0 != User_32.EnumDisplaySettings(null, User_32.ENUM_CURRENT_SETTINGS, ref dm)) 
             { 
-
                 dm.dmPelsWidth = width; 
                 dm.dmPelsHeight = height; 
-
                 int iRet = User_32.ChangeDisplaySettings(ref dm, User_32.CDS_TEST); 
-
                 if (iRet == User_32.DISP_CHANGE_FAILED) 
                 { 
                     return "Unable To Process Your Request. Sorry For This Inconvenience."; 
@@ -162,17 +141,13 @@ namespace Resolution
                                 return "Failed To Change The Resolution"; 
                             } 
                     } 
-
                 } 
-
-
             } 
             else 
             { 
                 return "Failed To Change The Resolution."; 
             } 
         } 
-
         private static DEVMODE1 GetDevMode1() 
         { 
             DEVMODE1 dm = new DEVMODE1(); 
@@ -183,7 +158,6 @@ namespace Resolution
         } 
     } 
 } 
-
 "@ 
 
 Add-Type $pinvokeCode -ErrorAction SilentlyContinue 
@@ -192,5 +166,5 @@ Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 
 Set-ScreenResolution -Width 1920 -Height 1080
 
-Start-Process-FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
+Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
 Start-Process -FilePath "C:\TOOLS2\RUN\Debug\Dropboxer_v_01.exe"
