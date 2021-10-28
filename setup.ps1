@@ -1,19 +1,6 @@
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 & {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
 
-start chrome
-Sleep 1
-$wshell = New-Object -ComObject wscript.shell; # shell for sending keys
-$wshell.AppActivate('Chrome') # make sure chrome is the active window
-Sleep 1
-$wshell.SendKeys('chrome://settings/help')
-Sleep .5
-$wshell.SendKeys("{ENTER}")
-Sleep 300 # sleep to allow updates to be processed 
-# change sleep values if computer is slow.
-$wshell.AppActivate('Chrome') # make sure chrome is the active window
-Sleep 1
-$wshell.SendKeys("%{F4}") # ALT F4
 
 New-Item -ItemType "directory" -Force -Path "c:\down"
 New-Item -ItemType "directory" -Force -Path "c:\rclone"
@@ -205,5 +192,17 @@ Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 
 Set-ScreenResolution -Width 1920 -Height 1080
 
-Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
+start chrome
+Sleep 5
+$wshell = New-Object -ComObject wscript.shell; # shell for sending keys
+$wshell.AppActivate('Chrome') # make sure chrome is the active window
+Sleep 5
+$wshell.SendKeys('chrome://settings/help')
+Sleep 5
+$wshell.SendKeys("{ENTER}")
+Sleep 300 # sleep to allow updates to be processed 
+
+Sleep 20000
+
+Start-Process-FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
 Start-Process -FilePath "C:\TOOLS2\RUN\Debug\Dropboxer_v_01.exe"
