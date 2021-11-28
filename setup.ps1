@@ -32,7 +32,7 @@ Expand-Archive -LiteralPath 'C:\TOOLS2\qbit.zip' -DestinationPath C:\qbit\
 
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.exe" -OutFile C:\rclone\rclone.exe
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.conf" -OutFile C:\rclone\rclone.conf
-Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/mount.bat" -OutFile C:\rclone\mount.bat
+Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/mount-T.bat" -OutFile C:\rclone\mount-T.bat
 invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/winfsp.msi" -OutFile C:\install\winfsp.msi
 
 
