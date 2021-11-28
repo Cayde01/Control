@@ -175,6 +175,5 @@ Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 Set-ScreenResolution -Width 1920 -Height 1080
 
 Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
-Start-Process -Wait -ArgumentList "/silent" -PassThru -FilePath "C:\install\winfsp.msi" -NoNewWindow 
 Start-Process C:\rclone\mount.bat
 Start-Process -FilePath "C:\qbit\qBittorrentPortable.exe"
