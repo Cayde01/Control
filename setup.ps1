@@ -30,7 +30,7 @@ Expand-Archive -LiteralPath 'C:\TOOLS2\boxer.zip' -DestinationPath C:\TOOLS2\RUN
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/qBit.zip" -OutFile C:\TOOLS2\qbit.zip
 Expand-Archive -LiteralPath 'C:\TOOLS2\qbit.zip' -DestinationPath C:\qbit\
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/Current.zip" -OutFile C:\TOOLS2\current.zip
-Expand-Archive -LiteralPath 'C:\TOOLS2\current.zip' -DestinationPath C:\Users\runneradmin\Download\current\
+Expand-Archive -LiteralPath 'C:\TOOLS2\current.zip' -DestinationPath C:\Users\runneradmin\Downloads\current\
 
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.exe" -OutFile C:\rclone\rclone.exe
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.conf" -OutFile C:\rclone\rclone.conf
