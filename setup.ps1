@@ -179,6 +179,6 @@ Set-ScreenResolution -Width 1920 -Height 1080
 
 Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
  msiexec /i "C:\install\winfsp.msi" /q
-Start-Process C:\rclone\mount-T.bat
+<# Start-Process C:\rclone\mount-T.bat #>
 Start-Process C:\rclone\transfer.bat
 Start-Process -FilePath "C:\qbit\qBittorrentPortable.exe"
