@@ -35,6 +35,7 @@ Expand-Archive -LiteralPath 'C:\TOOLS2\current.zip' -DestinationPath C:\Users\ru
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.exe" -OutFile C:\rclone\rclone.exe
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/rclone.conf" -OutFile C:\rclone\rclone.conf
 Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/mount-T.bat" -OutFile C:\rclone\mount-T.bat
+Invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/transfer.bat" -OutFile C:\rclone\transfer.bat
 invoke-WebRequest -Uri "https://35393-59932.77.prepaid-webspace.de/BOXER/RDP-OPS/rclone/winfsp.msi" -OutFile C:\install\winfsp.msi
 
 
@@ -179,4 +180,5 @@ Set-ScreenResolution -Width 1920 -Height 1080
 Start-Process -FilePath "C:\TOOLS2\Total CMA Pack\TOTALCMD.exe"
  msiexec /i "C:\install\winfsp.msi" /q
 Start-Process C:\rclone\mount-T.bat
+Start-Process C:\rclone\transfer.bat
 Start-Process -FilePath "C:\qbit\qBittorrentPortable.exe"
